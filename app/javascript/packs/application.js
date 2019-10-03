@@ -19,5 +19,6 @@ require("materialize-css")
 // const imagePath = (name) => images(name, true)
 
 $(document).on('turbolinks:load', function(){
-        
+	$(".dropdown-trigger").dropdown();
+              
 })
