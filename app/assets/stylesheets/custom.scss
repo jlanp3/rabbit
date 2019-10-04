@@ -1,11 +1,43 @@
 @import 'materialize-css/dist/css/materialize';
+// Global reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// -----------------------
 
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+// Navbar and footer bg color
+// ------------------------
+
+nav, .page-footer {
+  background: gray;
+}
+
+@media screen and (min-width: 800px){
+  .nav-wrapper > a {
+  margin-left: 20px; 
   }
 
-  main {
-    flex: 1 0 auto;
-  }
+}
+
+.link-list {
+  display: flex;
+  align-items: center;
+}
+
+.img-avatar {
+margin-right: 5px;
+}
+
+// -------------------------
+

@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :confirmable
 
   validates :username, presence: true
+  has_one_attached :avatar
 end

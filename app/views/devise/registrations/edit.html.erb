@@ -31,6 +31,16 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label "Profile Picture" %><br />
+    <%= f.file_field :avatar %>
+  </div>
+  <% if @user.avatar.attached? %>
+    <div class="field">
+      <%= image_tag(@user.avatar, width: "10%", class: "circle responsive-img") %><br />
+    </div>
+  <% end %> <br>
+<hr>
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
