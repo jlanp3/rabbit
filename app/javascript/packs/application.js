@@ -20,5 +20,5 @@ require("materialize-css")
 
 $(document).on('turbolinks:load', function(){
 	$(".dropdown-trigger").dropdown();
-              
+  $('.sidenav').sidenav();
 })
