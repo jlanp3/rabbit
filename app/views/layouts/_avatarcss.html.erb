@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <div class="avatar-circle-sm">
+    <span class="initials center-align">
+      <%= current_user.username[0].upcase %>
+    </span>
+  </div>
+<% end %>
