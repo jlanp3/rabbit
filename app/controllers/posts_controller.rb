@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only:  [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
+  
   def index
     @posts = Post.all
   end
@@ -47,5 +49,12 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :user_id, :content)
+  end
+
+  def require_same_user
+    if current_user != @post.user
+      flash[:danger] = "You can only edit or delete your own article"
+      redirect_to root_path
+    end
   end
 end
